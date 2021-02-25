@@ -20,8 +20,8 @@ We built a convolutional neural network model using Keras and Tensorflow. The ba
 ### Front End Application
 We built a front-end web application using Python Flask, which employs the following packages: flask, keras, numpy, tensorflow, and pillow. The web app allows users to upload a photo of their choice. We created two python scripts that renders the image from the uploading form and is then feeds it into our waste classification model. Specifically, we defined a function that calls the model prediction for each uploaded image, and we then linked these scripts to an html file to return a classification for the image: "Organic" or "Recyced", along with the probability score. 
 
-We followed this article's steps to set up our Flask App:
-**Link:** https://medium.com/@arifulislam_ron/flask-web-application-to-classify-image-using-vgg16-d9c46f29c4cd
+We followed this article's steps to set up our Flask App:  
+**Link:** https://medium.com/@arifulislam_ron/flask-web-application-to-classify-image-using-vgg16-d9c46f29c4cd  
 **Author:** Arif Ul Islam (Ron)
 
 ![3-App](Resources/Images/image_app.png)
