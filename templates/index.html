@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+  </head>
+    
+    <!-- Landing Page -->
+   <body>
+    <!-- Slides  -->
+    <div class="jumbotron jumbotron-fluid" style="background-color: #3E7EE6;">
+      <div class="container">
+        <h1 class="display-4" style="color:white; text-align: center;">Is this recyclable?</h1>
+        <p class="lead" style="color:white; text-align: center;" >Upload your image to determine if your item is organic or recyclable.</p>
+
+      </div>
+    </div>
+
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-3">
+		  </div>
+		  <div class="col-sm-3">
+			<p class="lead">
+				<form method="post" action="/" enctype="multipart/form-data">
+				  <dl>
+				<p>
+				  <input type="file" name="file" autocomplete="off" required onchange="loadFile(event)">
+				</p>
+				  </dl>
+				<p><img id="output" width="200" /></p>
+				  <p>
+				<input type="submit" value="Submit">
+				  </p>
+			  </form>
+			  </p>
+		  </div>
+		  <div class="col-sm-3">
+			<p>
+				<div id= "results">
+					<h5 style="background-color:#3E7EE6; text-align: center; font-family:sans-serif; color:white; padding-top: 30px; padding-bottom: 30px;"><span>
+						{% with messages = get_flashed_messages() %}
+						{% if messages %}
+							Waste Category: {{ messages[0] }}
+						<br>
+							Probability: {{ messages[1] }}
+							<img src="{{ url_for('static', filename=messages[2])}}"> 
+						{% endif %}
+						 {% endwith %}
+					</span>
+					</h5>
+				</div>
+			</p>
+		  </div>
+		  <div class="col-sm-3"></div>
+		  
+		</div>
+	  </div>
+	<div>
+		  <script>
+		  var loadFile = function(event) {
+			var image = document.getElementById('output');
+			image.src = URL.createObjectURL(event.target.files[0]);
+
+		  };
+		  </script>
+		
+	</div>
+    
+  </body>
+</html>
