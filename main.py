@@ -11,8 +11,8 @@ import tensorflow as tf
 
 # def predict(img_path):
 def getPrediction(filename):
-     model = tf.keras.models.load_model("/Users/nicolemuscanell/UCF-FINAL-PROJECT/Resources/Model/final_model_weights.hdf5")
-     img = load_img('/Users/nicolemuscanell/UCF-FINAL-PROJECT/static/'+filename, target_size=(180, 180))
+     model = tf.keras.models.load_model("/classrepo/HomeWork_out/Project3_ManuelaClone/UCF-PROJECT-03/final_model_weights.hdf5")
+     img = load_img('/classrepo/HomeWork_out/Project3_ManuelaClone/UCF-PROJECT-03/static/'+filename, target_size=(180, 180))
      img = img_to_array(img)
      img = img / 255
      img = np.expand_dims(img,axis=0)
